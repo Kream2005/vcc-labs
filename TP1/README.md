@@ -1,78 +1,24 @@
-Réponses
+# TP1 : De la machine au conteneur
 
-Checkpoint 1 :Machine virtuelle
+## Étape 1
 
-1\.
+1. Une machine virtuelle est une instance logique qui utilise des ressources virtualisées (CPU, RAM, stockage).
+2. Isolation importante, ce qui améliore la sécurité. Optimisation des ressources en hébergeant plusieurs machines virtuelles sur une même machine physique.
+3. Une VM permet d'exécuter plusieurs applications nécessitant des environnements différents sur une même machine physique. Contrairement à une utilisation directe de l'ordinateur, elle n'a pas un accès direct aux ressources physiques, car celles-ci sont gérées et partagées par l'hyperviseur.
 
+## Étape 2
 
+1. Un conteneur Docker est un environnement isolé créé à partir d'une image Docker. Il exécute une application et ses dépendances dans un environnement indépendant.
+2. Les conteneurs utilisent le système d'exploitation de la machine hôte, alors que les VM possèdent leur propre système d'exploitation. Ils sont donc plus légers et plus rapides à démarrer.
+3. Ils sont légers, facilement reproductibles et adaptés aux architectures modernes, notamment aux microservices.
 
-Une machine virtuelle est une instance logique qui utilise des ressources virtualisées, telles que le CPU, la RAM et le stockage.
+## Étape 3
 
+1. Le Dockerfile crée une image de manière automatisée et reproductible, sans risque d'erreur humaine lors d'une configuration manuelle.
+2. Une image est un modèle contenant le système de fichiers, le code, les dépendances et ce qui est nécessaire à l'exécution. Un conteneur est une instance en cours d'exécution de cette image.
 
+## Étape 4
 
-2\.
-
-
-
-Les machines virtuelles présentent plusieurs avantages :
-
-
-
-Elles offrent un niveau d’isolation important, ce qui améliore la sécurité.
-
-
-
-Elles permettent d’optimiser l’utilisation des ressources en hébergeant plusieurs machines virtuelles sur une même machine physique.
-
-
-
-3\.
-
-
-
-L’utilisation de machines virtuelles permet d’exécuter plusieurs applications nécessitant des environnements différents sur une même machine physique. Contrairement à une utilisation directe de l’ordinateur, les machines virtuelles n’ont pas nécessairement un accès direct aux ressources physiques, car celles-ci sont gérées et partagées par l’hyperviseur.
-
-
-
-Checkpoint 2 : Docker et les conteneurs
-
-1\.
-
-
-
-Un conteneur Docker est un environnement isolé créé à partir d’une image Docker. Il permet d’exécuter une application ainsi que ses dépendances dans un environnement indépendant.
-
-
-
-2\.
-
-
-
-Les conteneurs utilisent le système d’exploitation de la machine hôte, contrairement aux machines virtuelles qui possèdent leur propre système d’exploitation. Cela rend les conteneurs plus légers et plus rapides à démarrer.
-
-
-
-3\.
-
-
-
-Les conteneurs sont plus légers, facilement reproductibles et particulièrement adaptés aux architectures modernes, notamment aux microservices.
-
-
-
-Checkpoint 3 : Dockerfile et image Docker
-
-1\.
-
-
-
-Le Dockerfile permet de créer une image Docker de manière automatisée et reproductible, sans risque d’erreur humaine lors de la configuration manuelle.
-
-
-
-2\.
-
-
-
-Une image Docker est un modèle contenant le système de fichiers, le code de l’application, ses dépendances et les éléments nécessaires à son exécution.
-
+1. Une seule commande construit, lance et arrête tous les services, et le réseau qui les relie est créé automatiquement, au lieu de gérer chaque conteneur un par un.
+2. Il décrit toute l'application (services, ports, réseaux) : c'est la configuration du déploiement, versionnable dans Git.
+3. Limites : déploiement sur plusieurs machines, haute disponibilité, montée en charge automatique. Un orchestrateur comme Kubernetes est alors plus adapté.
